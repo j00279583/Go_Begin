@@ -60,7 +60,8 @@ input:
 
 }
 func (c *console) WelcomeInfo() {
-
+	fmt.Println("welcome come in")
+	fmt.Println("Please input server IP and port :")
 }
 
 func (c *console) HelpInfo()  error{
