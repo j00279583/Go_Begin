@@ -66,8 +66,8 @@ func (c *console) WelcomeInfo() {
 
 func (c *console) HelpInfo()  error{
 
-	fmt.Println("input like this:  [opertype] [ID] [name]")
-	fmt.Printf("operTyoe: \r\n 0 for add \r\n 1 for del \r\n 2 for uypdate \r\n 3 for query\r\n ")
+	fmt.Println("input like this:  [operType] [ID] [Name]")
+	fmt.Printf("operType: \r\n 0 for add \r\n 1 for del \r\n 2 for uypdate \r\n 3 for query\r\n ")
 	fmt.Printf("stuInfo: \r\n 1、stuID 2、stuName \r\n")
 
 
@@ -103,7 +103,7 @@ func (c *console) ConnectToServer(ip string, port int)  (*net.UDPConn, error){
 		fmt.Println(err)
 	}
 
-	fmt.Println("before",ip)
+	//fmt.Println("before",ip)
 
 	ip1 := net.ParseIP(ip)
 
