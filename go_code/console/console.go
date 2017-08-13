@@ -67,8 +67,8 @@ func (c *console) WelcomeInfo() {
 func (c *console) HelpInfo()  error{
 
 	fmt.Println("input like this:  [opertype] [ID] [name]")
-	fmt.Printf("operTyoe: \r\n 1 for add \r\n 2 for del \r\n 3 for uypdate \r\n 4 for query\r\n ")
-	fmt.Printf("stuInfo: \r\n 1、stuID 2、stuNamer\r\n")
+	fmt.Printf("operTyoe: \r\n 0 for add \r\n 1 for del \r\n 2 for uypdate \r\n 3 for query\r\n ")
+	fmt.Printf("stuInfo: \r\n 1、stuID 2、stuName \r\n")
 
 
 	return nil
