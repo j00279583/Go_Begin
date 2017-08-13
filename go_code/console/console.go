@@ -162,7 +162,7 @@ func (c *console) CheckUserInput(data []byte)  (bool, bool) {
 			}
 
 		case OperTypeDel,OperTypeQuery:
-			if len(msg) != 2 {
+			if len(msgslnce) != 2 {
 				fmt.Println("illegal input: \r\n param is not illegal.")
 				return false,false
 			}
