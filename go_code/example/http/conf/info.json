@@ -1,0 +1,11 @@
+{
+  "ServerData" :{
+    "Ip" :  "127.0.0.1",
+	"Port": "8080",
+	"Dir" : "con"
+  },
+  "ClientData" :{
+    "Name": "agent",
+    "ID":    "321"
+  }
+}
