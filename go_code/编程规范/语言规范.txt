@@ -1,0 +1,65 @@
+该规范翻译自https://github.com/golang/go/wiki/CodeReviewComments#gofmt
+1、代码写完时，请运行一遍gofmt ，让编辑器完善你的代码。
+2、注释语句需要以声明类型的结构的开始，并且尽量是一个完整的语句，有结束符号。以便更好的展示在godoc里。
+3、对于contex使用，要将该变量定义为第一个入参。
+4、当定义一个切片时，用 var t []string  比  t:= []string{}更好
+5、对外导出的变量都需要加一个注释。
+6、不用轻易使用panic，除非你知道那是什么，用日志和返回错误的处理方式。
+7、error string 不用大写开头，也不要用字符结束符号。
+8、清楚每一个goroutine的生命周期，防止泄露，和数据干扰。
+9、不要丢弃人任何一个err，要处理err，如果没用何必返回。
+10、imports 包分三个等级  库包， 私有包， 别人包。
+11、对于有多个返回值的查询，如果一个字符串表现不了。就通过其他结果标记。如bool的fasle ok
+12、对错误的处理简洁明了
+if err != nil {
+	// error handling
+} else {
+	// normal code
+}
+if err != nil {
+	// error handling
+	return // or continue, etc.
+}
+// normal code
+
+If the if statement has an initialization statement that, such as:
+
+if x, err := f(); err != nil {
+	// error handling
+	return
+} else {
+	// use x
+}
+
+then this may require moving the short variable declaration to its own line:
+
+x, err := f()
+if err != nil {
+	// error handling
+	return
+}
+// use x
+
+13、对于本身就是首字母缩写词，保持一个恒定
+
+use url 或者URL not use Url
+
+use http or HTTP  not use Http
+
+14,、对于不可导出的变量以驼峰形势表示。小写开头
+
+maxLength notMaxLength or MAX_LENGTH
+
+15、 给返回的参数命名。这样在godoc看起来更舒服。待实际测试。
+
+16、对于一个小的结构 传递参数可以直接值传递，而不是传递指针。
+
+17,、对于方法的接受名字，尽可能简写，1 到2 个字符即可，但是要做到左右文件同统一。
+18、对于变量的命名，应该尽可能短。 如果在一个函数里面。
+
+这个变量使用的位置和声明的位置 越远。那么就可以声明的越详细。
+
+
+全局变量和一些不常用的变量，声明的详细点。
+
+
